@@ -1,13 +1,13 @@
 module PrimesMultiplication
+  # Represents generator of Prime Numbers using "AKS primality test" algorythm
   class PrimeNumber
     class << self
-
       def prime?(p)
         return false if p < 2
 
         coeff = x_minus_1_to_the(p)
         coeff[0] += coeff.pop
-        coeff.all? { |n| n % p == 0 }
+        coeff.all? { |n| (n % p).zero? }
       end
 
       def first(n)
@@ -31,7 +31,6 @@ module PrimesMultiplication
           ([0] + ex).zip(ex + [0]).map { |x, y| x - y }
         end
       end
-
     end
   end
 end
