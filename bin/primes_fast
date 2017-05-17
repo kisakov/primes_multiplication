@@ -3,4 +3,4 @@
 app_path = File.expand_path(File.dirname(__FILE__) + '/..')
 $LOAD_PATH.unshift(app_path + '/lib')
 require 'primes_multiplication'
-PrimesMultiplication.run(false)
+PrimesMultiplication.run(true)

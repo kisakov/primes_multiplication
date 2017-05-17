@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe PrimesMultiplication::Table do
-  let(:primes) { PrimesMultiplication::PrimeNumber.first(3) }
+  let(:primes) { [2, 3, 5] }
   let(:instance) { described_class.new(primes) }
 
   describe '.table' do

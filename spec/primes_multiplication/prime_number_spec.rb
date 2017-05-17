@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe PrimesMultiplication::PrimeNumber do
+RSpec.shared_examples 'a prime numbers' do
   let(:ten_primes) { [2, 3, 5, 7, 11, 13, 17, 19, 23, 29] }
 
   describe '#first' do
@@ -23,4 +23,12 @@ describe PrimesMultiplication::PrimeNumber do
       it { is_expected.to be true }
     end
   end
+end
+
+describe PrimesMultiplication::PrimeNumberSlow do
+  it_behaves_like 'a prime numbers'
+end
+
+describe PrimesMultiplication::PrimeNumberFast do
+  it_behaves_like 'a prime numbers'
 end

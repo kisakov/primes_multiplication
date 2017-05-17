@@ -1,9 +1,10 @@
 module PrimesMultiplication
   # Read an argument n (first n prime numbers). If no argunemnt - th e dafualt value for n is 10
   class Processor
-    def self.run
+    def self.run(fast)
       n = (ARGV[0] || 10).to_i
-      primes = PrimeNumber.first(n)
+      klass = fast ? PrimeNumberFast : PrimeNumberSlow
+      primes = klass.first(n)
       table = Table.new(primes).table
       view = TableView.new(table)
 
