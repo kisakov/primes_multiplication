@@ -5,15 +5,18 @@ describe PrimesMultiplication::Table do
   let(:instance) { described_class.new(primes) }
 
   describe '.table' do
-    subject { instance.table }
-    let(:expected_table) do
-      [
-        [2, 4, 6, 10],
-        [3, 6, 9, 15],
-        [5, 10, 15, 25]
-      ]
-    end
+    context 'when table is full' do
+      subject { instance.table }
+      let(:expected_table) do
+        [
+          [nil, 2, 3, 5],
+          [2, 4, 6, 10],
+          [3, 6, 9, 15],
+          [5, 10, 15, 25]
+        ]
+      end
 
-    it { is_expected.to eq expected_table }
+      it { is_expected.to eq expected_table }
+    end
   end
 end

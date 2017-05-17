@@ -9,6 +9,9 @@ Metrics/BlockLength:
 Metrics/LineLength:
   Max: 100
 
+Style/StructInheritance:
+  Enabled: false
+
 AllCops:
   Exclude:
     - 'primes_multiplication.gemspec'

@@ -4,9 +4,10 @@ module PrimesMultiplication
     def self.run
       n = (ARGV[0] || 10).to_i
       primes = PrimeNumber.first(n)
-      table = Table.new(primes)
+      table = Table.new(primes).table
+      view = TableView.new(table)
 
-      table.display
+      view.display
     end
   end
 end
