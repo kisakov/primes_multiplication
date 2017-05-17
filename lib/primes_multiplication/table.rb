@@ -12,5 +12,9 @@ module PrimesMultiplication
         acc << [n1] + numbers.map { |n2| n1 * n2 }
       end
     end
+
+    def display
+      Terminal::Table.new(headings: [nil] + numbers, rows: table)
+    end
   end
 end
