@@ -14,7 +14,7 @@ module PrimesMultiplication
     end
 
     def display
-      Terminal::Table.new(headings: [nil] + numbers, rows: table)
+      puts Terminal::Table.new(headings: [nil] + numbers, rows: table)
     end
   end
 end
