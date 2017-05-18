@@ -20,8 +20,10 @@ module PrimesMultiplication
     numbers = (1..n.to_i).to_a
 
     [PrimeNumberFast, PrimeNumberSlow].each do |klass|
-      time = Benchmark.benchmark do |x|
-        x.report(klass) { numbers.each { |n| klass.prime?(n)} }
+      Benchmark.benchmark do |x|
+        x.report(klass) do
+          numbers.each { |num| klass.prime?(num) }
+        end
       end
     end
   end
