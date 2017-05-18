@@ -1,6 +1,7 @@
 # PrimesMultiplication
 
 Coding exercise for fundingcircle.com
+There are two implementations with C code and with Ruby code.
 
 ## Installation
 
@@ -15,7 +16,7 @@ or
 ### Dependencies
 
 * ruby >= 2.0.0
-* gem RubyInline
+* gem RubyInline for C implementation
 
     $ gem install RubyInline
 
@@ -28,13 +29,13 @@ There are two implementations of the program:
 
 **Fast prime numbers implementation with C code**
 
-    $ bin/primes_fast
-    $ bin/primes_fast 50
+    $ bin/primes_fast # first ten prime numbers
+    $ bin/primes_fast 50 # first fifteen prime numbers
 
 **Slow prime numbers implementation with Ruby code**
 
-    $ bin/primes
-    $ bin/primes 50
+    $ bin/primes # first ten prime numbers
+    $ bin/primes 50 # first fifteen prime numbers
 
 ## Rspec and Rubocop
 
@@ -43,6 +44,7 @@ There are two implementations of the program:
 
 ### Complexity
 
+Generating prime numbers is sqrt(n) complexity. But PrimeNumberFast(C code) much faster than PrimeNumberSlow(Ruby code) because Ruby not so good in work with numbers.
 Generating the multiplication table is O(n**2) complexity.
 Displaying the table is also O(n**2) complexity.
 
