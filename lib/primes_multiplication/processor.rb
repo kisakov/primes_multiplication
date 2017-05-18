@@ -6,9 +6,8 @@ module PrimesMultiplication
       klass = fast ? PrimeNumberFast : PrimeNumberSlow
       primes = klass.first(n)
       table = Table.new(primes).table
-      view = TableView.new(table)
 
-      view.display
+      TableView.new(table).display
     end
   end
 end
