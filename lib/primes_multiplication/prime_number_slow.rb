@@ -1,22 +1,14 @@
 module PrimesMultiplication
-  # Represents generator of Prime Numbers using "AKS primality test" algorithm
+  # Represents generator of Prime Numbers with Ruby code
   class PrimeNumberSlow < PrimeNumberBase
-    class << self
-      def prime?(p)
-        return false if p < 2
+    def self.prime?(p)
+      return false if ((p % 2).zero? && p > 2) || p <= 1
 
-        coeff = x_minus_1_to_the(p)
-        coeff[0] += coeff.pop
-        coeff.all? { |n| (n % p).zero? }
+      (3...p / 2).step(2) do |i|
+        return false if (p % i).zero?
       end
 
-      private
-
-      def x_minus_1_to_the(p)
-        p.times.inject([1]) do |ex, _|
-          ([0] + ex).zip(ex + [0]).map { |x, y| x - y }
-        end
-      end
+      true
     end
   end
 end

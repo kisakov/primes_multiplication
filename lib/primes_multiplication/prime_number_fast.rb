@@ -1,7 +1,7 @@
 require 'inline'
 
 module PrimesMultiplication
-  # Represents generator of Prime Numbers using simple algorithm
+  # Represents generator of Prime Numbers with C code
   class PrimeNumberFast < PrimeNumberBase
     inline do |builder|
       builder.c_singleton '
