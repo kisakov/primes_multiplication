@@ -45,7 +45,17 @@ There are two implementations of the program:
 
 ### Complexity
 
-Generating prime numbers is sqrt(n) complexity. But PrimeNumberFast(C code) much faster than PrimeNumberSlow(Ruby code) because Ruby not so good in work with numbers.
+Generating prime numbers is O(sqrt(n)) complexity. But PrimeNumberFast(C code) much faster than PrimeNumberSlow(Ruby code) because Ruby not so good in work with numbers.
+
+```
+PrimesMultiplication::PrimeNumberFast  0.020000   0.000000   0.020000 (  0.015548)
+PrimesMultiplication::PrimeNumberSlow  0.160000   0.000000   0.160000 (  0.170176)
+```
+
+    $ bin/benchmark # benchmarking prime function for 100_000 numbers
+    $ bin/benchmark 500000 # benchmarking prime function for 500_000 numbers
+
+**benchmark**
 
 Generating the multiplication table is O(n^2) complexity.
 

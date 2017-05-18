@@ -1,3 +1,4 @@
+require 'benchmark'
 require 'primes_multiplication/version'
 require 'primes_multiplication/prime_number_base'
 require 'primes_multiplication/prime_number_fast'
@@ -12,5 +13,16 @@ module PrimesMultiplication
 
   def run(fast = true)
     Processor.run(fast)
+  end
+
+  def benchmark(n)
+    n ||= 100_000
+    numbers = (1..n.to_i).to_a
+
+    [PrimeNumberFast, PrimeNumberSlow].each do |klass|
+      time = Benchmark.benchmark do |x|
+        x.report(klass) { numbers.each { |n| klass.prime?(n)} }
+      end
+    end
   end
 end
