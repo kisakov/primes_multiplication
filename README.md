@@ -1,6 +1,6 @@
 # PrimesMultiplication
 
-Coding exercise for fundingcircle.com
+Coding exercise
 
 There are two implementations with C code and with Ruby code.
 
@@ -80,7 +80,6 @@ There are two implementations of the program:
 
 ### Objective
 
-Funding Circle Coding Challenge
 Write a program that prints out a multiplication table of the first 10 prime number.
 
 * The program must run from the command line and print one table to STDOUT.
